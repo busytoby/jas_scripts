@@ -1,0 +1,6 @@
+these scripts mostly for previewing media/organizing collections
+
+randfile.pl - choose a random line from stdin
+randplay2.sh - play a random video from the current directory, prompting for what to do at end
+mplay2.sh - play 4 or 6 random videos simultaneously from within the current subtree
+sync-ipod.sh - self explanatory
