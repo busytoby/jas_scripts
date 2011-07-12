@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 cont="y"
 c="y"
 avidemux="/cygdrive/c/Program Files (x86)\Avidemux 2.5\avidemux2_qt4.exe"
 #find . -size +48M > /tmp/files
 
-find . -maxdepth 1 -iname \*wmv -o -iname \*avi -o -iname \*mpg -o -iname \*mkv -o -iname \*mpeg -o -iname \*iso -o -iname \*da0 -o -iname \*flv > /tmp/files
+find . -iname \*wmv -o -iname \*avi -o -iname \*mpg -o -iname \*mkv -o -iname \*mpeg -o -iname \*iso -o -iname \*da0 -o -iname \*flv > /tmp/files
+
+#find . -maxdepth 1 -iname \*wmv -o -iname \*avi -o -iname \*mpg -o -iname \*mkv -o -iname \*mpeg -o -iname \*iso -o -iname \*da0 -o -iname \*flv > /tmp/files
 ##find -maxdepth 1 -type f -size +10M > /tmp/files
 
 #find -type f -size +10M > /tmp/files
@@ -48,7 +50,7 @@ while [ "$cont" == "y" ]; do
 
   mplayer $arg1 $arg2 "$file"
 
-  echo $file
+  echo `cat /tmp/files |wc -l` :: $file
   echo "d/r/a/q:"
   c="n"
   read -t 10 c
@@ -57,5 +59,6 @@ while [ "$cont" == "y" ]; do
     cont="n"
   fi
 
-done;
+done
+
 rm -rf /tmp/files /tmp/files_tmp

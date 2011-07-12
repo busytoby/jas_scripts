@@ -1,4 +1,4 @@
-#!/bin/perl --
+#!/usr/bin/perl --
 
 srand (time);
 #srand (time ^ $$ ^ unpack "%L*", `ps axww | gzip`);
